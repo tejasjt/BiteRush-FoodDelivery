@@ -9,7 +9,7 @@ import { discountedPrice, inr } from "@/lib/format";
 import { useCart } from "@/lib/cart";
 import type { Food } from "@/lib/catalog";
 
-export function FoodCard({ food, categoryName }: { food: Food; categoryName?: string }) {
+export function FoodCard({ food, categoryName }: { food: Food; categoryName?: string | undefined }) {
   const { addItem } = useCart();
   const price = discountedPrice(Number(food.price), food.offer_percent);
 
