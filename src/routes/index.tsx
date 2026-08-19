@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { FoodCard } from "@/components/site/FoodCard";
-import { categoriesQuery, foodsQuery } from "@/lib/catalog";
+import { categoriesQuery, foodsQuery, type Food } from "@/lib/catalog";
 import { foodImage } from "@/lib/food-images";
 import { discountedPrice, inr } from "@/lib/format";
 
@@ -283,7 +283,7 @@ function FoodGrid({
   loading,
   categoryName,
 }: {
-  foods: { id: string; category_id: string }[] & any[];
+  foods: Food[];
   loading: boolean;
   categoryName: (id: string) => string | undefined;
 }) {
